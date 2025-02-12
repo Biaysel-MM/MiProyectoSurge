@@ -1,11 +1,89 @@
-echo "<!DOCTYPE html>
-<html lang='es'>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Mi Página en Surge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiProyectoSurge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #f7b731, #1dd1a1, #54a0ff, #5f27cd);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            animation: float 5s infinite ease-in-out alternate;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-30px); }
+        }
+
+        .button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background: rgba(0, 0, 0, 1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Hola, esta es mi página desplegada con Surge y GitHub Actions</h1>
+    <h1>Bienvenido a la mejor página animada</h1>
+    <div class="animated-box" style="top: 20%; left: 10%;"></div>
+    <div class="animated-box" style="top: 50%; right: 15%;"></div>
+    <div class="animated-box" style="bottom: 20%; left: 40%;"></div>
+    
+    <button class="button" onclick="window.open('https://github.com/Biaysel-MM/MiProyectoSurge', '_blank')">
+        Ver mi Repositorio en GitHub
+    </button>
 </body>
-</html>" > index.html
+</html>
+
